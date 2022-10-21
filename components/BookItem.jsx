@@ -72,6 +72,7 @@ const BookItem = ({ title, author, id, price, imageUrl, featured }) => {
             }}>
             <Button
               type="button"
+              color='secondary'
               variant="outlined">
               Edit
             </Button>
