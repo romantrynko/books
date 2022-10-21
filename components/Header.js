@@ -1,9 +1,11 @@
 import React from 'react'
-import { AppBar } from '@mui/material'
+import { AppBar, Toolbar } from '@mui/material'
 
 const Header = () => {
   return (
-    <AppBar>Header</AppBar>
+    <AppBar>
+      <Toolbar></Toolbar>
+    </AppBar>
   )
 }
 
