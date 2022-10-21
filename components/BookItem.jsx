@@ -1,25 +1,52 @@
 import {
+  Box,
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
   Typography
 } from '@mui/material';
 import React from 'react';
 
-const BookItem = ({ title, author, id, price, imageUrl }) => {
+const BookItem = ({ title, author, id, price, imageUrl, featured }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        width: '100%',
+        height: '100%',
+        ':hover': {
+          boxShadow: '0 10px 20px #ccc',
+          transform: 'scale(1.01)'
+        }
+      }}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="340"
-          image={imageUrl}
-          alt="green iguana"
-        />
-        <CardContent>
+        <Box sx={{ position: 'relative' }}>
+          {featured && (
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                padding: '10px 20px 10px 10px',
+                background: 'red',
+                 boxShadow: '0 4px 8px 3px rgba(0,0,0,0.7)',
+                borderBottomRightRadius: 40,
+                color: 'white',
+                letterSpacing: 2,
+                fontSize: 16
+              }}>
+              Featured
+            </Box>
+          )}
+          <CardMedia
+            component="img"
+            height="340"
+            image={imageUrl}
+            alt="green iguana"
+          />
+        </Box>
+        <CardContent sx={{ padding: '10px' }}>
           <Typography
             gutterBottom
             variant="h5"
@@ -37,14 +64,24 @@ const BookItem = ({ title, author, id, price, imageUrl }) => {
             color="text.secondary">
             Cost: ${price}
           </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              marginTop: 2
+            }}>
+            <Button
+              type="button"
+              variant="outlined">
+              Edit
+            </Button>
+            <Button
+              type="button"
+              variant="outlined">
+              Delete
+            </Button>
+          </Box>
         </CardContent>
-        <CardActions>
-          <Button
-            type="button"
-            variant="outlined">
-            Buy
-          </Button>
-        </CardActions>
       </CardActionArea>
     </Card>
   );

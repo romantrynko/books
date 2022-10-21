@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   return (
-    <AppBar sx={{bgcolor: '#322dd3'}}>
+    <AppBar sx={{bgcolor: '#112233'}}>
       <Toolbar>
         <IconButton>
           <ImportContactsIcon sx={{
