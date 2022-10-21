@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
 import BookItem from './BookItem';
+import dynamic from 'next/dynamic';
 
 const BookList = ({ data }) => {
   return (
@@ -27,4 +28,4 @@ const BookList = ({ data }) => {
   );
 };
 
-export default BookList;
+export default dynamic(() => Promise.resolve(BookList), { ssr: false });

@@ -5,11 +5,12 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  Link,
   Typography
 } from '@mui/material';
 import React from 'react';
 
-const BookItem = ({ title, author, id, price, imageUrl, featured }) => {
+const BookItem = ({ title, author, _id, price, imageUrl, featured }) => {
   return (
     <Card
       sx={{
@@ -29,8 +30,8 @@ const BookItem = ({ title, author, id, price, imageUrl, featured }) => {
                 top: 0,
                 left: 0,
                 padding: '10px 20px 10px 10px',
-                background: 'red',
-                 boxShadow: '0 4px 8px 3px rgba(0,0,0,0.7)',
+                background: '#F652A0',
+                boxShadow: '0 4px 8px 3px rgba(0,0,0,0.5)',
                 borderBottomRightRadius: 40,
                 color: 'white',
                 letterSpacing: 2,
@@ -70,12 +71,14 @@ const BookItem = ({ title, author, id, price, imageUrl, featured }) => {
               justifyContent: 'space-between',
               marginTop: 2
             }}>
-            <Button
-              type="button"
-              color='secondary'
-              variant="outlined">
-              Edit
-            </Button>
+            <Link href={`/books/${_id}`}>
+              <Button
+                type="button"
+                color="secondary"
+                variant="outlined">
+                Edit
+              </Button>
+            </Link>
             <Button
               type="button"
               variant="outlined">
