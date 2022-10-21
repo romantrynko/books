@@ -6,7 +6,7 @@ export const connectToDB = async () => {
   }
   
   await mongoose
-    .connect(process.env.MONGODB_CONNECTION)
+    .connect('mongodb+srv://trynkoroman:left4dead88@cluster0.zgcq7g8.mongodb.net/?retryWrites=true&w=majority')
     .then(() => console.log('Connected to db'))
     .catch(err => console.log(err))
 }
